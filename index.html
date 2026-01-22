@@ -1,81 +1,51 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>Мой сайт</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #4facfe, #00f2fe);
-            color: white;
-            text-align: center;
-        }
-        header {
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 18px;
-        }
-        nav {
-            background: rgba(0,0,0,0.2);
-            padding: 15px;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .card {
-            background: white;
-            color: #333;
-            max-width: 400px;
-            margin: 40px auto;
-            padding: 20px;
-            border-radius: 15px;
-        }
-        button {
-            background: #4facfe;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        footer {
-            margin-top: 40px;
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Фото для скачивания</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .photo {
+      background: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    a {
+      display: block;
+      margin-top: 10px;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>🚀 Мой первый сайт</h1>
-    <p>Я сделал сайт и выложил его в интернет</p>
-</header>
+<h1>📸 Скачать фото</h1>
+<p>Нажми на кнопку под фото, чтобы скачать</p>
 
-<nav>
-    <a href="#">Главная</a>
-    <a href="#">Обо мне</a>
-    <a href="#">Контакты</a>
-</nav>
+<div class="gallery">
 
-<div class="card">
-    <h2>🎉 Сайт работает!</h2>
-    <p>Этот сайт размещён на GitHub Pages.</p>
-    <button onclick="alert('Спасибо, что нажал кнопку!')">Нажми меня</button>
-</div>
+  <div class="photo">
+    <img src="photo1.jpg">
+    <a href="photo1.jpg" download>⬇ Скачать</a>
+  </div>
 
-<footer>
-    <p>© 2026 Мой сайт</p>
-</footer>
-
-</body>
-  </html>
+  <div class="photo">
+    <img src="photo2.jpg">
+    <
