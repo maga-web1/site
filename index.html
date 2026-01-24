@@ -1,143 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Продажа земли</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-      color: #fff;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Земля — энциклопедия</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Подробная энциклопедия о планете Земля: карты, таблицы, факты.">
 
-    header {
-      padding: 40px 20px;
-      background: rgba(0,0,0,0.3);
-    }
-
-    header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 18px;
-    }
-
-    .container {
-      padding: 30px 15px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .info {
-      background: #ffffff;
-      color: #333;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      text-align: left;
-    }
-
-    .info h2 {
-      color: #27ae60;
-      margin-top: 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .price {
-      font-size: 28px;
-      color: #e74c3c;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .contact {
-      background: #111;
-      padding: 30px 15px;
-      margin-top: 40px;
-    }
-
-    .contact h2 {
-      color: #2ecc71;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 15px 30px;
-      background: #e67e22;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 18px;
-    }
-
-    .btn:hover {
-      background: #d35400;
-    }
-  </style>
+<style>
+body{margin:0;font-family:Georgia,serif;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:15px}
+main{max-width:1000px;margin:auto;background:#fff;padding:20px}
+h1,h2{border-bottom:1px solid #a2a9b1}
+.lang{float:right}
+button{margin-left:5px;padding:5px 10px;cursor:pointer}
+input{width:100%;padding:8px;margin:15px 0}
+.highlight{background:yellow}
+img{width:100%;max-width:800px;margin:15px 0}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{border:1px solid #a2a9b1;padding:8px;text-align:left}
+th{background:#eaecf0}
+.fact{background:#f1f8ff;padding:10px;border-left:4px solid #1e90ff;margin:10px 0}
+footer{text-align:center;color:#555;padding:15px;font-size:14px}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Продажа земельного участка</h1>
-  <p>Отличное место для дома, бизнеса или фермы</p>
+  <div class="lang">
+    <button onclick="setLang('ru')">Рус</button>
+    <button onclick="setLang('en')">Eng</button>
+    <button onclick="setLang('tj')">Тоҷ</button>
+  </div>
+  <strong>Свободная энциклопедия</strong>
 </header>
 
-<div class="container">
+<main>
+<input id="search" placeholder="🔍 Поиск по сайту" onkeyup="searchText()">
 
-  <div class="info">
-    <h2>Информация о земле</h2>
-    <p>📍 Местоположение: удобный район</p>
-    <p>📐 Площадь: 10 соток</p>
-    <p>🚗 Хорошая дорога и подъезд</p>
-    <p>💧 Вода и электричество рядом</p>
-    <p>🌱 Подходит для строительства и сельского хозяйства</p>
-  </div>
+<h1 id="title"></h1>
+<p id="intro"></p>
 
-  <div class="info">
-    <h2>Фотографии участка</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="">
-      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e" alt="">
-      <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="">
-      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
-      <img src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c" alt="">
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="">
-      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="">
-    </div>
-  </div>
+<h2 id="h1"></h2>
+<p id="t1"></p>
 
-  <div class="price">
-    Цена: договорная
-  </div>
+<h2 id="h2"></h2>
+<p id="t2"></p>
 
-</div>
+<h2>Карта Земли</h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Equirectangular_projection_SW.jpg">
 
-<div class="contact">
-  <h2>Связаться с продавцом</h2>
-  <p>📞 Телефон: +992 XX XXX XX XX</p>
-  <a class="btn" href="tel:+992000000000">Позвонить</a>
-</div>
+<h2 id="h3"></h2>
+<p id="t3"></p>
+
+<h2>Основные факты</h2>
+<table>
+<tr><th>Параметр</th><th>Значение</th></tr>
+<tr><td>Возраст</td><td>4,5 млрд лет</td></tr>
+<tr><td>Диаметр</td><td>12 742 км</td></tr>
+<tr><td>Океаны</td><td>71% поверхности</td></tr>
+<tr><td>Спутник</td><td>Луна</td></tr>
+</table>
+
+<h2 id="h4"></h2>
+<p id="t4"></p>
+
+<div class="fact">🌍 Земля — единственная планета, где подтверждена жизнь.</div>
+<div class="fact">🧲 Магнитное поле защищает от солнечного ветра.</div>
+<div class="fact">💧 Вода существует в трёх состояниях: жидком, твёрдом и газообразном.</div>
+
+<h2 id="h5"></h2>
+<p id="t5"></p>
+
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+let currentLang="ru";
+
+const text={
+ru:{
+title:"Земля",
+intro:"Земля — третья планета от Солнца и единственная известная планета с жизнью. Она образовалась около 4,5 миллиардов лет назад.",
+h1:"Общие сведения",
+t1:"Земля вращается вокруг своей оси за 24 часа и вокруг Солнца за 365 дней. Наклон оси создаёт времена года.",
+h2:"Строение планеты",
+t2:"Планета состоит из земной коры, мантии и ядра. Внутреннее ядро создаёт магнитное поле.",
+h3:"Атмосфера",
+t3:"Атмосфера удерживает тепло и защищает Землю от вредного излучения.",
+h4:"Климат и вода",
+t4:"Океаны, моря, реки и ледники регулируют климат и поддерживают жизнь.",
+h5:"Человек и природа",
+t5:"Деятельность человека влияет на экологию и климат Земли.",
+foot:"Энциклопедический сайт о планете Земля"
+},
+en:{
+title:"Earth",
+intro:"Earth is the third planet from the Sun and the only known planet with life.",
+h1:"General information",
+t1:"Earth rotates every 24 hours and orbits the Sun in 365 days.",
+h2:"Planet structure",
+t2:"Earth consists of crust, mantle, and core.",
+h3:"Atmosphere",
+t3:"The atmosphere protects Earth from radiation.",
+h4:"Climate and water",
+t4:"Oceans and water regulate climate.",
+h5:"Humans and nature",
+t5:"Human activity affects the planet.",
+foot:"Encyclopedic website about Earth"
+},
+tj:{
+title:"Замин",
+intro:"Замин сеюмин сайёра аз Офтоб буда, дорои ҳаёт мебошад.",
+h1:"Маълумоти умумӣ",
+t1:"Замин 24 соат дар гирди худ ва 365 рӯз дар гирди Офтоб мегардад.",
+h2:"Сохтори сайёра",
+t2:"Замин аз қишр, мантия ва ядро иборат аст.",
+h3:"Атмосфера",
+t3:"Атмосфера Заминро муҳофизат мекунад.",
+h4:"Иқлим ва об",
+t4:"Об иқлими Заминро танзим мекунад.",
+h5:"Инсон ва табиат",
+t5:"Фаъолияти инсон ба табиат таъсир мерасонад.",
+foot:"Сайти энсиклопедӣ дар бораи Замин"
+}
+};
+
+function setLang(l){
+currentLang=l;
+search.value="";
+render();
+}
+
+function render(){
+let d=text[currentLang];
+for(let k in d){
+if(document.getElementById(k))document.getElementById(k).innerText=d[k];
+}
+}
+
+function searchText(){
+render();
+let q=search.value.toLowerCase();
+if(!q)return;
+["intro","t1","t2","t3","t4","t5"].forEach(id=>{
+let el=document.getElementById(id);
+el.innerHTML=el.innerText.replace(new RegExp(q,"gi"),m=>`<span class="highlight">${m}</span>`);
+});
+}
+
+render();
+</script>
 
 </body>
 </html>
